@@ -26,6 +26,7 @@ github_username: mwien
 # Build settings
 markdown: kramdown
 theme: minima
+url: "https://mwien.github.io"
 plugins:
  - jekyll-sitemap
 
