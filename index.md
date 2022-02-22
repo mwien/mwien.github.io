@@ -10,7 +10,7 @@ layout: home
 Hi! I am a researcher in Causality. Currently, I am working towards a PhD in Computer Science at the University of Lübeck. My main interests lie in developing robust and efficient algorithms for causal inference and analysis. My most recent work has been about problems on so-called Markov equivalence classes of DAGs, which typically arise in causal discovery from observational data. 
 
 ## List of Selected Publications
-[Extendability of Causal Graphical Models: Algorithms and Computational Complexity](https://www.auai.org/uai2021/pdf/uai2021.480.pdf)  
+[Extendability of Causal Graphical Models: Algorithms and Computational Complexity](https://proceedings.mlr.press/v161/wienobst21a.html)  
 M. Wienöbst, M. Bannach, M. Liśkiewicz (UAI 2021: Long Talk + **Best Student Paper**)
 
 [Polynomial-Time Algorithms for Counting and Sampling Markov Equivalent DAGs](https://arxiv.org/abs/2012.09679)  
