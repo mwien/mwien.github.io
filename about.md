@@ -11,6 +11,9 @@ I studied Computer Science at the University of Lübeck from 2013 to 2019.
 I have been involed in competitive programming and in particular the ICPC contests since 2015, first as participant and now as coach for the teams from Uni Lübeck.
 
 ### Full List of Publications
+[Identification in Tree-shaped Linear Structural Causal Models](https://proceedings.mlr.press/v151/van-der-zander22a.html)
+B. van der Zander, M. Wienöbst, M. Bläser, M. Liskiewicz (AISTATS 2022)
+
 [An Approach to Reduce the Number of Conditional Independence Tests in the PC Algorithm](https://link.springer.com/chapter/10.1007/978-3-030-87626-5_21)
 M. Wienöbst, M. Liśkiewicz (KI 2021)
 
