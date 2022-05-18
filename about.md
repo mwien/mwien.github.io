@@ -31,3 +31,6 @@ M. Bannach, S. Berndt, M. Schuster, M. Wienöbst (IPEC 2020)
 
 [Recovering Causal Structures from Low-Order Conditional Independencies](https://arxiv.org/abs/2010.02675)  
 M. Wienöbst,  M. Liśkiewicz (AAAI 2020)
+
+### Invited Talks
+13.04.2022 Presentation on 'Algorithms for Causal Inference' at the Darmstädter Ontologenkreis
