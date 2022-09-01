@@ -11,6 +11,9 @@ I studied Computer Science at the University of Lübeck from 2013 to 2019.
 I have been involed in competitive programming and in particular the ICPC contests since 2015, first as participant and now as coach for the teams from Uni Lübeck.
 
 ### Full List of Publications
+[A New Constructive Criterion for Markov Equivalence of MAGs](https://proceedings.mlr.press/v180/wienobst22a.html)  
+M. Wienöbst, M. Bannach, M. Liśkiewicz (UAI 2022: Oral + **Best Student Paper**)
+
 [Identification in Tree-shaped Linear Structural Causal Models](https://proceedings.mlr.press/v151/van-der-zander22a.html)   
 B. van der Zander, M. Wienöbst, M. Bläser, M. Liskiewicz (AISTATS 2022)
 
