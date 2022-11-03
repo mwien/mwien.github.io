@@ -37,3 +37,9 @@ M. Wienöbst,  M. Liśkiewicz (AAAI 2020)
 
 ### Invited Talks
 13.04.2022 Presentation on 'Algorithms for Causal Inference' at the Darmstädter Ontologenkreis
+
+### Awards
+Distinguished Paper Award at AAAI 2021
+Best Student Paper Award at UAI 2021
+Best Student Paper Award at UAI 2022
+Top Reviewer at UAI 2022
