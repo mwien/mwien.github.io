@@ -40,6 +40,9 @@ M. Wienöbst,  M. Liśkiewicz (AAAI 2020)
 
 ### Awards
 Distinguished Paper Award at AAAI 2021
+
 Best Student Paper Award at UAI 2021
+
 Best Student Paper Award at UAI 2022
+
 Top Reviewer at UAI 2022
