@@ -8,9 +8,15 @@ Since 2019, I am a PhD student at the Institute for Theoretical Computer Science
 
 I studied Computer Science at the University of Lübeck from 2013 to 2019. 
 
-I have been involed in competitive programming and in particular the ICPC contests since 2015, first as participant and now as coach for the teams from Uni Lübeck.
+I have been involed in competitive programming and in particular the ICPC contests since 2015, first as participant and now as coach for the teams from Uni Lübeck as well as a regular jury member in German ICPC contests (such the [Wintercontest](https://wintercontest.io/) and the [GCPC](https://gcpc.nwerc.eu/)).
 
-### Full List of Publications
+### Full List of Publications (including Preprints)
+[Finding Front-Door Adjustment Sets in Linear Time](https://arxiv.org/abs/2211.16468)   
+M. Wienöbst, B. van der Zander, M. Liśkiewicz
+
+[Polynomial-Time Algorithms for Counting and Sampling Markov Equivalent DAGs with Applications](https://arxiv.org/abs/2205.02654)    
+M. Wienöbst, M. Bannach, M. Liśkiewicz
+
 [A New Constructive Criterion for Markov Equivalence of MAGs](https://proceedings.mlr.press/v180/wienobst22a.html)  
 M. Wienöbst, M. Bannach, M. Liśkiewicz (UAI 2022: Oral + **Best Student Paper**)
 
@@ -35,11 +41,11 @@ M. Bannach, S. Berndt, M. Schuster, M. Wienöbst (IPEC 2020)
 [Recovering Causal Structures from Low-Order Conditional Independencies](https://arxiv.org/abs/2010.02675)  
 M. Wienöbst,  M. Liśkiewicz (AAAI 2020)
 
-### Invited Talks
-13.04.2022 Presentation on 'Algorithms for Causal Inference' at the Darmstädter Ontologenkreis
-
 ### Awards
 Distinguished Paper Award at AAAI 2021  
 Best Student Paper Award at UAI 2021  
 Best Student Paper Award at UAI 2022  
 Top Reviewer at UAI 2022  
+
+### Invited Talks
+13.04.2022 Presentation on 'Algorithms for Causal Inference' at the Darmstädter Ontologenkreis
