@@ -18,7 +18,7 @@ M. Wienöbst, M. Bannach, M. Liśkiewicz
 
 ## List of Selected Publications
 Efficient Enumeration of Markov Equivalent DAGs   
-M. Wienöbst, M. Luttermann, M. Bannach, M. Liśkiewicz (To appear in: AAAI 2023)
+M. Wienöbst, M. Luttermann, M. Bannach, M. Liśkiewicz (To appear in AAAI 2023, Oral presentation)
 
 [A New Constructive Criterion for Markov Equivalence of MAGs](https://proceedings.mlr.press/v180/wienobst22a.html)  
 M. Wienöbst, M. Bannach, M. Liśkiewicz (UAI 2022: Oral + **Best Student Paper**)

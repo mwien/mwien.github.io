@@ -15,7 +15,7 @@ I have been involed in competitive programming and in particular the ICPC contes
 M. Wienöbst, B. van der Zander, M. Liśkiewicz
 
 Efficient Enumeration of Markov Equivalent DAGs   
-M. Wienöbst, M. Luttermann, M. Bannach, M. Liśkiewicz (To appear in: AAAI 2023)
+M. Wienöbst, M. Luttermann, M. Bannach, M. Liśkiewicz (To appear in AAAI 2023, Oral presentation)
 
 [Polynomial-Time Algorithms for Counting and Sampling Markov Equivalent DAGs with Applications](https://arxiv.org/abs/2205.02654)    
 M. Wienöbst, M. Bannach, M. Liśkiewicz
