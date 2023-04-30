@@ -49,6 +49,7 @@ Distinguished Paper Award at AAAI 2021
 Best Student Paper Award at UAI 2021  
 Best Student Paper Award at UAI 2022  
 Top Reviewer at UAI 2022  
+AI Newcomer 2023 (awarded by the German Informatics Society)
 
 ### Invited Talks
 13.04.2022 Presentation on 'Algorithms for Causal Inference' at the Darmstädter Ontologenkreis
