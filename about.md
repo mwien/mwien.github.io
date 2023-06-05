@@ -55,4 +55,5 @@ Top Reviewer at UAI 2022
 [AI Newcomer 2023 (awarded by the German Informatics Society)](https://kicamp.org/ki-camp-2023/ki-newcomerinnen-2023)
 
 ### Invited Talks
-13.04.2022 Presentation on 'Algorithms for Causal Inference' at the Darmstädter Ontologenkreis
+13.04.2022 Presentation on 'Algorithms for Causal Inference' at the [Darmstädter Ontologenkreis](https://www.ontologenkreis.org/)
+03.05.2023 Presentation on 'A New Constructive Criterion for Markov Equivalence of MAGs' at the [Causal Discussion Group](https://matej-zecevic.de/cdg/)
