@@ -52,9 +52,9 @@ Distinguished Paper Award at AAAI 2021
 Best Student Paper Award at UAI 2021  
 Best Student Paper Award at UAI 2022  
 Top Reviewer at UAI 2022  
-[AI Newcomer 2023 (awarded by the German Informatics Society)](https://kicamp.org/ki-camp-2023/ki-newcomerinnen-2023)
+[AI Newcomer 2023](https://kicamp.org/ki-camp-2023/ki-newcomerinnen-2023) (awarded by the German Informatics Society)   
 
 ### Invited Talks
-13.04.2022 Presentation on 'Algorithms for Causal Inference' at the [Darmstädter Ontologenkreis](https://www.ontologenkreis.org/)
+13.04.2022 Presentation on 'Algorithms for Causal Inference' at the [Darmstädter Ontologenkreis](https://www.ontologenkreis.org/)   
 03.05.2023 Presentation on 'A New Constructive Criterion for Markov Equivalence of MAGs' at the [Causal Discussion Group](https://matej-zecevic.de/cdg/)    
 14.06.2023 Presentation on 'Linear-Time Algorithms for Front-Door Adjustment in Causal Graphs' at the [TUM Seminar on Statistics and Data Science](https://www.math.cit.tum.de/math/forschung/kolloquium-seminare/seminar-on-statistics-and-data-science/)
