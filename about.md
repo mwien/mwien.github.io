@@ -18,7 +18,7 @@ M. Wienöbst, B. van der Zander, M. Liśkiewicz
 M. Luttermann\*, M. Wienöbst\*, M. Liśkiewicz (To appear in CLeaR 2023, \* Equal Contribution)
 
 [Efficient Enumeration of Markov Equivalent DAGs](https://arxiv.org/abs/2301.12212)   
-M. Wienöbst, M. Luttermann, M. Bannach, M. Liśkiewicz (To appear in AAAI 2023, Oral presentation)
+M. Wienöbst, M. Luttermann, M. Bannach, M. Liśkiewicz (AAAI 2023: Oral presentation)
 
 [Polynomial-Time Algorithms for Counting and Sampling Markov Equivalent DAGs with Applications](https://arxiv.org/abs/2205.02654)    
 M. Wienöbst, M. Bannach, M. Liśkiewicz
