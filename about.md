@@ -15,13 +15,13 @@ I have been involed in competitive programming and in particular the ICPC contes
 M. Wienöbst, B. van der Zander, M. Liśkiewicz
 
 [Practical Algorithms for Orientations of Partially Directed Graphical Models](https://arxiv.org/abs/2302.14386)   
-M. Luttermann\*, M. Wienöbst\*, M. Liśkiewicz (To appear in CLeaR 2023, \* Equal Contribution)
+M. Luttermann\*, M. Wienöbst\*, M. Liśkiewicz (CLeaR 2023, \* Equal Contribution)
 
 [Efficient Enumeration of Markov Equivalent DAGs](https://arxiv.org/abs/2301.12212)   
 M. Wienöbst, M. Luttermann, M. Bannach, M. Liśkiewicz (AAAI 2023: Oral presentation)
 
 [Polynomial-Time Algorithms for Counting and Sampling Markov Equivalent DAGs with Applications](https://arxiv.org/abs/2205.02654)    
-M. Wienöbst, M. Bannach, M. Liśkiewicz
+M. Wienöbst, M. Bannach, M. Liśkiewicz (JMLR 24(213), 2023) 
 
 [A New Constructive Criterion for Markov Equivalence of MAGs](https://proceedings.mlr.press/v180/wienobst22a.html)  
 M. Wienöbst, M. Bannach, M. Liśkiewicz (UAI 2022: Oral + **Best Student Paper**)

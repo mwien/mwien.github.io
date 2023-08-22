@@ -7,16 +7,16 @@ layout: home
 
 ![Profile](profile.jpg){: width="180"}{: style="float: right"}
 
-Hi! I am a researcher in Causality. Currently, I am working towards a PhD in Computer Science at the University of Lübeck. My main interests lie in developing practical and efficient algorithms for causal inference and analysis. A major share of my research has been about Markov equivalence classes of DAGs, which typically arise in causal discovery from observational data. In short, a Markov equivalence class consists of causal structures, which cannot be distinguished based on observations alone. A focus has been on the algorithmic aspects of Markov equivalence. For example, we discovered how to compute the size of a Markov equivalence class in polynomial time, a fundamental problem with important [applications](https://arxiv.org/abs/2205.02654). I am also interested in (algorithmic) problems in other areas of causal inferences and recently started to work on causal models with latent variables, such as maximal ancestral graphs (MAGs), and delved into the problem of causal identification using front-door adjustment.
+Hi! I am a researcher in Causality. Currently, I am working towards a PhD in Computer Science at the University of Lübeck. My main interests lie in developing practical and efficient algorithms for causal inference and analysis. A major share of my research has been about Markov equivalence classes of DAGs, which typically arise in causal discovery from observational data. In short, a Markov equivalence class consists of causal structures, which cannot be distinguished based on observations alone. A central focus has been on the algorithmic aspects of Markov equivalence. I am also interested in (algorithmic) problems in other areas of causal inferences and recently started to work on causal models with latent variables, such as maximal ancestral graphs (MAGs), and delved into the problem of causal identification using front-door adjustment.
 
 ## Recent Preprints
 [Finding Front-Door Adjustment Sets in Linear Time](https://arxiv.org/abs/2211.16468)   
 M. Wienöbst, B. van der Zander, M. Liśkiewicz
 
-[Polynomial-Time Algorithms for Counting and Sampling Markov Equivalent DAGs with Applications](https://arxiv.org/abs/2205.02654)    
-M. Wienöbst, M. Bannach, M. Liśkiewicz
-
 ## List of Selected Publications
+[Polynomial-Time Algorithms for Counting and Sampling Markov Equivalent DAGs with Applications](https://arxiv.org/abs/2205.02654)    
+M. Wienöbst, M. Bannach, M. Liśkiewicz (JMLR 24(213), 2023)
+
 [Efficient Enumeration of Markov Equivalent DAGs](https://arxiv.org/abs/2301.12212)   
 M. Wienöbst, M. Luttermann, M. Bannach, M. Liśkiewicz (AAAI 2023: Oral presentation)
 
