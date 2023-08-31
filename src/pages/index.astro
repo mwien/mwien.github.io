@@ -2,22 +2,82 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { SITE_GEN_TITLE, SITE_DESCRIPTION } from '../consts';
+import { Image } from 'astro:assets';
+import profile from "../assets/profile.jpg";
 ---
+
+<!-- TODO:
+	- cv
+	- linkedin
+	- blog
+-->
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={SITE_GEN_TITLE} description={SITE_DESCRIPTION} />
 	</head>
+	<style>
+		.container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 10px;
+		}
+		a {text-decoration: none;}
+	</style>
 	<body>
-		<Header title={SITE_TITLE} />
+		<Header />
 		<main>
+			<h2>Hi!</h2>
+			<div class = "container">
+			<div>
+				<p>
+					I'm a theoretical computer scientist working on problems in causal inference, focusing mainly on algorithmic aspects of graphical causal models. I have a passion for problem-solving and look for simple and effective solutions.	
+				</p>
+			</div>
+			<div>
+				<Image src={profile} alt = "Picture of me :)" width = "450" />
+			</div>
+			</div>
+			<div>
+			<h5>Recent Preprints </h5>
 			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
+				<a href="https://arxiv.org/abs/2211.16468">Finding Front-Door Adjustment Sets in Linear Time</a><br>
+				M. Wienöbst, B. van der Zander, M. Liśkiewicz
 			</p>
+			<h5>Selected Publications </h5>
+			<p>
+				<a href="https://arxiv.org/abs/2205.02654">Polynomial-Time Algorithms for Counting and Sampling Markov Equivalent DAGs with Applications</a><br>
+				M. Wienöbst, M. Bannach, M. Liśkiewicz (JMLR 24(213), 2023)
+			</p>
+			<p>
+				<a href="https://arxiv.org/abs/2301.12212">Efficient Enumeration of Markov Equivalent DAGs</a><br>
+				M. Wienöbst, M. Luttermann, M. Bannach, M. Liśkiewicz (AAAI 2023: Oral)
+			</p>
+			<p>
+				<a href="https://proceedings.mlr.press/v180/wienobst22a.html">A New Constructive Criterion for Markov Equivalence of MAGs</a><br>
+				M. Wienöbst, M. Bannach, M. Liśkiewicz (UAI 2022: Oral + <strong>Best Student Paper</strong>)
+			</p>
+			<p>
+				<a href="https://proceedings.mlr.press/v161/wienobst21a.html">Extendability of Causal Graphical Models: Algorithms and Computational Complexity</a><br>
+				M. Wienöbst, M. Bannach, M. Liśkiewicz (UAI 2021: Long Talk + <strong>Best Student Paper</strong>)
+			</p>
+			<p>
+				<a href="https://arxiv.org/abs/2012.09679">Polynomial-Time Algorithms for Counting and Sampling Markov Equivalent DAGs</a><br>
+				M. Wienöbst, M. Bannach, M. Liśkiewicz (AAAI 2021: <strong>Distinguished Paper</strong>)
+			</p>	
+			<p>
+				<a href="https://arxiv.org/abs/2010.02675">Recovering Causal Structures from Low-Order Conditional Independencies</a><br>
+				M. Wienöbst, M. Liśkiewicz (AAAI 2020)
+			</p>	
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+<!--
 			<p>
 				This template comes with a few integrations already configured in your
 				<code>astro.config.mjs</code> file. You can customize your setup with
@@ -43,7 +103,4 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 					>astro-blog-template
 				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
 			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+-->
