@@ -1,0 +1,99 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_GEN_TITLE, SITE_ABOUT_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_ABOUT_TITLE + ' | ' + SITE_GEN_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<style>
+		a {text-decoration: none;}
+	</style>
+	<body>
+		<Header />
+		<main>
+			<p>
+				Since 2019, I am a PhD candidate at the Institute for Theoretical Computer Science in Lübeck doing research in causal inference. The focus of my work is on developing efficient algorithms for problems in causal graphical modelling by combining graph theory, algorithmics and complexity theory.
+			</p>
+			<p>
+				I studied Computer Science at the University of Lübeck from 2013 to 2019.
+			</p>
+			<p>
+				I have been involed in competitive programming and in particular the ICPC contests since 2015, first as participant and now as coach for the teams from Uni Lübeck as well as a regular jury member in German ICPC contests (such the Wintercontest and the GCPC).
+			</p>
+			
+			<h5> Awards </h5>
+			<ul>
+				<li> Distinguished Paper Award at AAAI 2021 </li>
+				<li> Best Student Paper Award at UAI 2021 </li>
+				<li> Best Student Paper Award at UAI 2022 </li>
+				<li> Top Reviewer at UAI 2022 </li>
+				<li> <a href="https://kicamp.org/ki-camp-2023/ki-newcomerinnen-2023"> AI Newcomer 2023 </a> (awarded by the German Informatics Society) </li>
+			</ul>
+
+			<h5> Invited Talks </h5>
+				<ul>
+					<li> 13.04.2022: ‘Algorithms for Causal Inference’ at the <a href="https://www.ontologenkreis.org/"> Darmstädter Ontologenkreis </a> </li>
+					<li> 03.05.2023: ‘A New Constructive Criterion for Markov Equivalence of MAGs’ at the <a href="https://matej-zecevic.de/cdg/"> Causal Discussion Group </a> </li>
+					<li> 14.06.2023: ‘Linear-Time Algorithms for Front-Door Adjustment in Causal Graphs’ at the <a href="https://www.math.cit.tum.de/math/forschung/kolloquium-seminare/seminar-on-statistics-and-data-science/"> TUM Seminar on Statistics and Data Science </a> </li>
+				</ul>
+
+			<h5> Full List of Publications (including Preprints) </h5>
+			<p>
+				<a href="https://arxiv.org/abs/2211.16468">Finding Front-Door Adjustment Sets in Linear Time</a><br>
+				M. Wienöbst, B. van der Zander, M. Liśkiewicz
+			</p>
+			<p>
+				<a href="https://arxiv.org/abs/2205.02654">Polynomial-Time Algorithms for Counting and Sampling Markov Equivalent DAGs with Applications</a><br>
+				M. Wienöbst, M. Bannach, M. Liśkiewicz (JMLR 24(213), 2023)
+			</p>
+			<p>
+				<a href="https://arxiv.org/abs/2302.14386">Practical Algorithms for Orientations of Partially Directed Graphical Models</a><br>
+				M. Luttermann*, M. Wienöbst*, M. Liśkiewicz (CLeaR 2023: *Equal Contribution)
+			</p>
+			<p>
+				<a href="https://arxiv.org/abs/2301.12212">Efficient Enumeration of Markov Equivalent DAGs</a><br>
+				M. Wienöbst, M. Luttermann, M. Bannach, M. Liśkiewicz (AAAI 2023: Oral)
+			</p>
+			<p>
+				<a href="https://proceedings.mlr.press/v151/van-der-zander22a.html">Identification in Tree-shaped Linear Structural Causal Models</a><br>
+				B. van der Zander, M. Wienöbst, M. Bläser, M. Liskiewicz (AISTATS 2022)
+			</p>
+			<p>
+				<a href="https://proceedings.mlr.press/v180/wienobst22a.html">A New Constructive Criterion for Markov Equivalence of MAGs</a><br>
+				M. Wienöbst, M. Bannach, M. Liśkiewicz (UAI 2022: Oral + <strong>Best Student Paper</strong>)
+			</p>
+			<p>
+				<a href="https://link.springer.com/chapter/10.1007/978-3-030-87626-5_21">An Approach to Reduce the Number of Conditional Independence Tests in the PC Algorithm </a><br>
+				M. Wienöbst, M. Liśkiewicz (KI 2021)
+			</p>
+			<p>
+				<a href="https://proceedings.mlr.press/v161/wienobst21a.html">Extendability of Causal Graphical Models: Algorithms and Computational Complexity</a><br>
+				M. Wienöbst, M. Bannach, M. Liśkiewicz (UAI 2021: Long Talk + <strong>Best Student Paper</strong>)
+			</p>
+			<p>
+				<a href="https://arxiv.org/abs/2012.09679">Polynomial-Time Algorithms for Counting and Sampling Markov Equivalent DAGs</a><br>
+				M. Wienöbst, M. Bannach, M. Liśkiewicz (AAAI 2021: <strong>Distinguished Paper</strong>)
+			</p>	
+			<p>
+				<a href="https://drops.dagstuhl.de/opus/volltexte/2020/13331/pdf/LIPIcs-IPEC-2020-28.pdf">PACE Solver Description: PID*</a><br>
+				 M. Bannach, S. Berndt, M. Schuster, M. Wienöbst (IPEC 2020)
+			</p>
+			<p>
+				<a href="https://drops.dagstuhl.de/opus/volltexte/2020/13330/pdf/LIPIcs-IPEC-2020-27.pdf">PACE Solver Description: Fluid</a><br>
+				 M. Bannach, S. Berndt, M. Schuster, M. Wienöbst (IPEC 2020)
+			</p>
+			<p>
+				<a href="https://arxiv.org/abs/2010.02675">Recovering Causal Structures from Low-Order Conditional Independencies</a><br>
+				M. Wienöbst, M. Liśkiewicz (AAAI 2020)
+			</p>	
+				
+		</main>
+		<Footer />
+	</body>
+</html>
+
