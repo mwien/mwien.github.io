@@ -1,0 +1,52 @@
+---
+title: 'Checking Transitivity and Morality of DAGs'
+description: 'TODO'
+pubDate: 'September 04 2023'
+heroImage: '/blog-placeholder-5.jpg'
+---
+
+[have to add my name up there]:#
+
+### Main Problem
+
+This blog post is about an observation I stumbled onto recently. Consider a *directed acyclic graph* (DAG) and the task of checking whether it is transitive, i.e., whether $a \rightarrow b \rightarrow c$ implies $a \rightarrow c$. It is easy to show that this task is as hard as detecting whether an undirected graph contains a triangle $a - b - c$ and $a - c$, which is not known to be solvable in linear-time in the size of the graph.
+
+[TODO: make this nicer]:#
+However, checking whether a DAG contains $a \rightarrow b \leftarrow c$, with $a$ and $c$ non-adjacent, can be solved in linear-time! This problem is known as *morality* check (are the parents of vertex $b$ *married*?) and stems from the Bayesian network literature.
+
+[TODO: pointers]:#
+
+Both problems can be phrased in the context of *subgraph isomorphism*. Given a graph $G$, determine for a (in our case) fixed graph $H$, whether $H$ is an induced subgraph of $G$. 
+
+[TODO: footnote also non-induce version]
+
+Then, for DAGs, this problem is computationally harder for $H = a \rightarrow b \rightarrow c$ than $H = a \rightarrow b \leftarrow c$. That's weird, right?
+
+A short disclaimer: Most of the observations and facts I present here are already known, though somewhat TODO over the literature. I give references whenever possible, in case I missed something relevant, feel free to write me.
+
+
+### Undirected Graphs
+
+Looking a bit more closely, this phenomenon, that different choices of $H$ even with the same number of vertices, lead to different complexities is not so unique. For example, consider the subgraph isomorphism problem for $H = a - b - c, a - c$, i.e., a triangle, and $H = a - b - c$, i.e., a path of length two. Then, the former one is hard (it's hard basically because no one has managed to make any progress on it, for a much more detailed analysis, see TODO). However, the latter one is almost trivial. Just find the connected components of $G$ and check whether each of them is a clique (can be done by counting edges). There are more cases than this, e.g., this paper looked at all 4-node choices for $H$. More generally, the hardness of detecting $H$ is connected to the treewidth of it (at least asymptotically). TODO
+
+TODO: more and zwick
+
+### Triangle Hardness of $a \rightarrow b \rightarrow c$
+
+Using a reduction, it is very easy to show that detecting $a \rightarrow b \rightarrow c$ is as hard as detecting a triangle in an undirected graph. This reduction is, e.g., given here https://cstheory.stackexchange.com/a/21510.
+
+TODO
+
+### Linear-Time Algorithm for $a \rightarrow c \leftarrow c$
+
+In contrast, checking whether a graph is moral is possible in linear-time. The algorithm we give below is based on the one for checking whether a graph has zero *fill-in* given here TODO. It relies on the fact that a graph has zero fill-in if, and only if, it does not contain $ a \rightarrow b \leftarrow c$
+
+Finally, consider the reduction from above. Obviously, it cannot work in this case anymore. The reason is TODO
+
+
+### Conclusion
+
+TODO
+
+The algorithm explicitly uses the topological ordering of the vertices. If the graph is cyclic (let's say there is still only one edge between any pair of vertices, e.g., we consider *oriented graphs*), it is unclear to me whether it is possible to solve the problem in linear-time. I tend to think it has similar hardness to triangle-detection, but it is not directly clear how to prove this by reduction.
+
