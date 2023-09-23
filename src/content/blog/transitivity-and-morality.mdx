@@ -7,10 +7,14 @@ heroImage: '/blog-placeholder-5.jpg'
 
 #### Main Observation
 
-This blog post is about a simple but fascinating observation I stumbled upon recently. It contrasts the time complexity of two, at first glance, very similar computational tasks on *directed acyclic graphs* (DAGs). First, consider the task of checking whether a DAG it is transitive, i.e., whether $a \rightarrow b \rightarrow c$ implies $a \rightarrow c$. See the following example:
+This blog post is about a simple but fascinating observation I stumbled upon recently. It contrasts the time complexity of two, at first glance, very similar computational tasks on *directed acyclic graphs* (DAGs). First, consider the task of checking whether a DAG it is transitive, i.e., whether $a \rightarrow b \rightarrow c$ implies $a \rightarrow c$. 
+TODO: rewrite such that refer to image for both tasks
+See the following example:
 
-Here, $c \rightarrow b \rightarrow d$ is in the graph, but $c$ and $d$ are non-adjacent making the graph not transitive. 
-It is rather easy to show that computationally this task is as hard as detecting whether an undirected graph contains a triangle $a - b - c$ and $a - c$ (see this [post](https://cstheory.stackexchange.com/a/21510) and the details below). This task is not known to be solvable in linear-time in the size of the graph despite considerable efforts (try to come up with a linear-time algorithm and you can write a very nice paper if you succeed!).
+![alt text](../../assets/transitivity_example.png)
+
+This graph contains $a \rightarrow c \rightarrow d$ but not edge $a \rightarrow d$ making it not transitive. 
+It is rather easy to show that computationally this task is as hard as detecting whether an undirected graph contains three pairwise connected vertices $a - b - c - a$, also called a triangle (see this [post](https://cstheory.stackexchange.com/a/21510) and the details below). This problem is not known to be solvable in linear-time in the size of the graph despite considerable efforts (try to come up with a linear-time algorithm and you can write a very nice paper if you succeed!).
 
 The main point of this article is that the similar-looking problem of checking whether a DAG contains $a \rightarrow b \leftarrow c$, with $a$ and $c$ non-adjacent, *can* be solved by a simple algorithm in linear-time! This problem is known as *morality*[^1] check (are the parents of vertex $b$ married, that is are they adjacent?) and stems from the [graphical models literature](https://en.wikipedia.org/wiki/Moral_graph). Again let's look at an example graph:
 
