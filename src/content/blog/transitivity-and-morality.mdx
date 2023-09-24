@@ -7,7 +7,9 @@ heroImage: '/blog-placeholder-5.jpg'
 
 #### Main Observation
 
-This blog post is about a simple but fascinating observation I stumbled upon recently. It contrasts the time complexity of two, at first glance, very similar computational tasks on *directed acyclic graphs* (DAGs). On the one hand, the problem of checking whether a DAG it is transitive, i.e., whether $a \rightarrow b \rightarrow c$ implies $a \rightarrow c$ and, on the other hand, the similar-looking problem of checking whether a DAG contains $a \rightarrow b \leftarrow c$, with $a$ and $c$ non-adjacent. This is known as *morality*[^1] check (are the parents of vertex $b$ married, that is are they adjacent?) and stems from the [graphical models literature](https://en.wikipedia.org/wiki/Moral_graph). Consider the following graphs as example:
+This blog post is about a simple and neat observation I stumbled upon recently. It contrasts the time complexity of two, at first glance, very similar computational tasks on *directed acyclic graphs* (DAGs). On the one hand, the problem of checking whether a DAG it is transitive, i.e., whether $a \rightarrow b \rightarrow c$ implies $a \rightarrow c$ and, on the other hand, the similar-looking problem of checking whether a DAG is *moral*[^1], that is contains $a \rightarrow b \leftarrow c$, with $a$ and $c$ non-adjacent. This notion stems from the [graphical models literature](https://en.wikipedia.org/wiki/Moral_graph). Consider the following graphs as example:
+
+[^1]: The morality alludes to the fact that the parents of a vertex should be adjacent, that is *married*. As often, this historical name is less-than-ideal in hindsight. I decided to keep it so that this blog post is google-able.  
 
 ![alt text](../../assets/transitivity_example.png)
 
@@ -26,7 +28,6 @@ It is rather easy to show that computationally this task is as hard as detecting
 
 The main point of this article is that the similar-looking problem of checking whether a DAG contains $a \rightarrow b \leftarrow c$, with $a$ and $c$ non-adjacent, *can* be solved by a simple algorithm in linear-time! This problem is known as *morality*[^1] check (are the parents of vertex $b$ married, that is are they adjacent?) and stems from the [graphical models literature](https://en.wikipedia.org/wiki/Moral_graph). Again let's look at an example graph:
 
-[^1]: As often, not the best name in hindsight. I decided to keep it so that this blog post is google-able.  
 
 Both problems can be phrased in the context of *subgraph isomorphism*. Given a graph $G$, determine for a (in our case) fixed graph $H$, whether $H$ is an induced[^2] subgraph of $G$.
 
