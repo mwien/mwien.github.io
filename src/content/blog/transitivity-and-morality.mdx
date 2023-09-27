@@ -1,5 +1,5 @@
 ---
-title: 'Checking Transitivity and Morality of DAGs'
+title: 'Three-Vertex Induced Subgraph Isomorphism in DAGs'
 description: 'By Marcel Wienöbst. This blog post discusses the time complexity of detecting certain induced subgraphs in DAGs. It shows fascinating differences for structurally close induced subgraphs on three vertices.'
 pubDate: 'September 21 2023'
 heroImage: '/blog-placeholder-5.jpg'
@@ -7,40 +7,29 @@ heroImage: '/blog-placeholder-5.jpg'
 
 #### Main Observation
 
-This blog post is about a simple and neat observation I stumbled upon recently. It contrasts the time complexity of two, at first glance, very similar computational tasks on *directed acyclic graphs* (DAGs). On the one hand, the problem of checking whether a DAG it is transitive, i.e., whether $a \rightarrow b \rightarrow c$ implies $a \rightarrow c$ and, on the other hand, the similar-looking problem of checking whether a DAG is *moral*[^1], that is contains $a \rightarrow b \leftarrow c$, with $a$ and $c$ non-adjacent. This notion stems from the [graphical models literature](https://en.wikipedia.org/wiki/Moral_graph). Consider the following graphs as example:
+This blog post is about a simple observation I stumbled upon recently. It contrasts the time complexity of two, at first glance, very similar computational tasks on *directed acyclic graphs* (DAGs). On the one hand, the problem of checking whether a DAG is *transitive*, i.e., whether $a \rightarrow b \rightarrow c$ implies $a \rightarrow c$ and, on the other hand, the problem of checking whether a DAG is *moral*[^1], that is $a \rightarrow b \leftarrow c$ implies that $a$ and $c$ are adjacent. The latter notion stems from the [graphical models literature](https://en.wikipedia.org/wiki/Moral_graph). Consider the following graphs as example:
 
-[^1]: The morality alludes to the fact that the parents of a vertex should be adjacent, that is *married*. As often, this historical name is less-than-ideal in hindsight. I decided to keep it so that this blog post is google-able.  
+[^1]: The name *moral graph* alludes to the fact that the parents of a vertex should be adjacent, that is *married*. As often, this historical name is less-than-ideal in hindsight. I still decided to keep it so that this blog post is google-able.  
 
-![alt text](../../assets/transitivity_example.png)
+![Basic examples of moral and transitive graphs.](../../assets/transitivity_example.png)
 
-TODO: better tikzpicture
+The graph on the left is not transitive, for example due to $a \rightarrow c \rightarrow d$, while $a \rightarrow c \leftarrow d$ implies non-morality of the right graph, in both case because $a$ and $d$ are non-adjacent.
 
-Both problems are identical to the induced subgraph isomorphism problem (detecting whether a graph $G$ contains another graph $H$ as induced subgraph [TODO:explain]). For transitivity $H = a \rightarrow b \rightarrow c$ and for morality $H = a \rightarrow b \leftarrow c$.
+As the example illustrates, the two problems are identical to the induced subgraph isomorphism problem (detecting whether a graph $G$ contains another graph $H$ as induced subgraph[^2]). For transitivity $H_{\text{trans}} = a \rightarrow b \rightarrow c$ and for morality $H_{\text{moral}} = a \rightarrow b \leftarrow c$. Surprisingly, and the main point of this article is that computationally these problems behave differently:
 
-Informally, the main message is the following:   
+[^2]: *Induced* means that the subgraph of $G$ needs to have the same non-edges as $H$ as well. See [this article](https://en.wikipedia.org/wiki/Induced_subgraph_isomorphism_problem) as a reference.
 
 **Observation:**   
-Checking morality of a graph is easily possible in linear-time in the size of the graph, while no linear-time algorithm is known for transitivity (and such an algorithm appears firmly out-of-reach). 
+Checking morality of a graph is (easily) possible in linear-time in the size of the graph, while no linear-time algorithm is known for transitivity (and such an algorithm appears firmly out-of-reach). 
 
-TODO: rewrite
-
-It is rather easy to show that computationally this task is as hard as detecting whether an undirected graph contains three pairwise connected vertices $a - b - c - a$, also called a triangle (see this [post](https://cstheory.stackexchange.com/a/21510) and the details below). This problem is not known to be solvable in linear-time in the size of the graph despite considerable efforts (try to come up with a linear-time algorithm and you can write a very nice paper if you succeed!).
-
-The main point of this article is that the similar-looking problem of checking whether a DAG contains $a \rightarrow b \leftarrow c$, with $a$ and $c$ non-adjacent, *can* be solved by a simple algorithm in linear-time! This problem is known as *morality*[^1] check (are the parents of vertex $b$ married, that is are they adjacent?) and stems from the [graphical models literature](https://en.wikipedia.org/wiki/Moral_graph). Again let's look at an example graph:
-
-
-Both problems can be phrased in the context of *subgraph isomorphism*. Given a graph $G$, determine for a (in our case) fixed graph $H$, whether $H$ is an induced[^2] subgraph of $G$.
-
-[^2]: Induced means that the non-adjacencies in $H$ also have to be present in the corresponding subgraph of $G$, e.g., $a - b - c$ is a subgraph of the triangle graph, but not an induced one.
-
-Then, as we show below, for DAGs, this problem is computationally harder for $H = a \rightarrow b \rightarrow c$ than for $H = a \rightarrow b \leftarrow c$. That seems weird at first, right? Hopefully, at the end of this blog post you have an intuition why this is the case!
-
-A short disclaimer: Most (if not all) observations and facts I present here are already known, though somewhat strewn over the literature. I give references whenever possible, in case I missed something relevant, feel free to contact me :)
+In the following, we will give evidence for this statement, but before we start a short disclaimer: Most (if not all) results I present here are already known, though somewhat spread out over the literature. I give references whenever possible, in case I missed something relevant, feel free to contact me :)
 
 #### Undirected Graphs
 
-Looking a bit more closely, the phenomenon, that different choices of $H$ with the same number of vertices, lead to different time complexities is not so unique.
-Let us consider undirected graphs for a moment and contrast the subgraph isomorphism problem for $H = a - b - c, a - c$, i.e., a triangle, with $H = a - b - c$, i.e., a path of length two. Then, the former one is hard in the sense that no linear-time algorithm is known. In fact, the only known subcubic algorithms are based on fast matrix multiplication, which imply that, at least theoretically, the problem is solvable in time $O(n^{2.373})$. Conversely, the latter problem one is almost trivially solvable in linear-time $O(n+m)$ (or $O(n^2)$ when expressing the time complexity purely in terms of the number of vertices) due to the following lemma. 
+Before we dive into, let's briefly revisit the more widely studied problem of induced subgraph isomorphism for *undirected graphs*. Here, the phenomenon, that different choices of $H$ with the same number of vertices, lead to different time complexities is well-documented.
+Consider the following two graphs:
+![Triangle graph.](../../assets/triangle.png)
+Then, the problem is hard in case of $H_{\text{triangle}}$ in the sense that no linear-time algorithm is known. In fact, the only known subcubic algorithms are based on fast matrix multiplication, which imply that, at least in theory, the problem is solvable in time $O(n^{2.373})$ (however these algorithms are uncommon in practice). See [Wikipedia](https://en.wikipedia.org/wiki/Triangle-free_graph#Triangle_finding_problem) for a more detailed overview of known results. Conversely, for $H_{\text{path}}$ the problem is almost trivially solvable in linear-time $O(n+m)$ (or $O(n^2)$ when expressing the time complexity purely in terms of the number of vertices) due to the following lemma. 
 
 **Lemma** (Folklore)    
 Let $G$ be a connected undirected graph. Then, $G$ contains an induced subgraph $a - b - c$ if, and only if, it is not complete (i.e. fully connected/a clique).
@@ -48,13 +37,15 @@ Let $G$ be a connected undirected graph. Then, $G$ contains an induced subgraph 
 *Proof.*   
 We show two directions. If $G$ contains induced subgraph $a - b - c$, then it is not complete. Conversely, assume $G$ is not complete. Hence, there exist $x$ and $y$, which are non-adjacent. Note that there exists a shortest path from $x$ to $y$ by connectedness of $G$. Clearly, this path is induced, else it would not be shortest. Hence, either we have $x - z - y$ for some $z$ or there exists such a triple on the path.
 
-It immediately follows that, to detect whether a graph contains an induced subgraph $a - b - c$, it suffices to find the connected components of $G$ and check whether each of them is a clique (this can be done by counting edges). This observation completes the picture for three-vertex undirected graphs $H$ as the remaining graphs are analogues of the discussed cases obtainable by changing edges into non-edges and vice versa. Interestingly, similar (more nuanced) effects also appear on four vertices as discussed in detail in [this paper](https://epubs.siam.org/doi/abs/10.1137/1.9781611973730.111) by Virginia Vassilevska Williams, Joshua R. Wang, Ryan Williams, and Huacheng Yu, which studies all possible cases in this setting. 
+It immediately follows that, to detect whether a graph contains an induced subgraph $a - b - c$, it suffices to find the connected components of $G$ and check whether each of them is a clique (this can be done by counting edges). 
 
-We will now get back to DAGs. The two induced subgraphs $H$ we consider are $a \rightarrow b \rightarrow c$ and $a \rightarrow b \leftarrow c$. On the surface both look similar to the case $a - b - c$ for undirected graphs, which would be obtained when ignoring edge directions. The following shows that directions matter.
+Indeed, this observation completes the picture for three-vertex undirected graphs $H$ as the remaining graphs are analogues of the discussed cases obtainable by changing edges into non-edges and vice versa. Interestingly, similar (more nuanced) effects also appear on four vertices as discussed in detail in [this paper](https://epubs.siam.org/doi/abs/10.1137/1.9781611973730.111) by Virginia Vassilevska Williams, Joshua R. Wang, Ryan Williams, and Huacheng Yu, which studies all possible cases in this setting. 
+
+We will now get back to DAGs. The two induced subgraphs $H_{\text{trans}}$ and $H_{\text{moral}}$, on the surface, both look similar to the case $a - b - c$ for undirected graphs, which would be obtained when ignoring edge directions. The following shows that directions matter.
 
 #### Triangle Hardness of Checking Transitivity
 
-We begin by showing that detecting $a \rightarrow b \rightarrow c$ is at least as hard as detecting a triangle in an undirected graph. This is possible by giving a reduction from the latter to the former problem. As mentioned above this reduction has been described [here](https://cstheory.stackexchange.com/a/21510). 
+We begin by showing that detecting induced subgraph $a \rightarrow b \rightarrow c$ is at least as hard as detecting a triangle in an undirected graph. This is possible by giving a reduction from the latter to the former problem. This reduction has been described e.g. [here](https://cstheory.stackexchange.com/a/21510). 
 
 Let $G = (V, E)$ be an instance of the triangle detection problem. Then, construct directed graph $D$ with vertex set $V_1 \cup V_2 \cup V_3$, with each $V_i$ being a copy of $V$. Insert edge 
 - $u_1 \rightarrow v_2$ for $u_1 \in V_1$, $v_2 \in V_2$ if $u \rightarrow v \in E$,
@@ -71,15 +62,21 @@ If there is an $O(n^{2+k})$ algorithm for checking DAG transitivity, then triang
 #### Linear-Time Algorithm for Checking Morality
 
 In contrast, checking whether a graph is moral is possible in linear-time. The algorithm we give below is based on the one for checking whether an ordered graph has zero fill-in[^3] given [here](https://epubs.siam.org/doi/abs/10.1137/0213035).
+TODO: more precise ref
 
 [^3]: We will not go into more details here, but essentially, for a DAG $G$, the undirected graph obtained by ignoring edge directions of $G$ has zero fill-in with regard to any topological ordering of $G$ if, and only if, $G$ does not contain $ a \rightarrow b \leftarrow c$ as induced subgraph.
 
 Slightly adapted to our setting, it proceeds as follows:
+1. Compute a topological ordering of the vertices of $G$ (that is a linear ordering of the vertices such that for every edge $u \rightarrow v$ it holds that $u$ comes before $v$ in the ordering). 
+2. For each vertex $v$, compute the vertex $u$ with $u \rightarrow v$ such that $u$ is closest to $v$ in the topological ordering. Denote this vertex as $C(v)$. 
+3. For each vertex $v$ and every $u \rightarrow v$, check that $u$ and $C(v)$ are adjacent.
 
-TODO
 
-**Lemma**   
-Let $G$ be a DAG. Testing whether $G$ is moral can be done in time $O(n+m)$. (TODO: make sure n and m are explained)
+**Lemma** (TODO)  
+Let $G$ be a DAG. Testing whether $G$ is moral can be done in linear time in the size of $G$ (that is $O(n+m)$, when $G$ has $n$ vertices and $m$ edges).
+
+*Proof.*   
+We first show correctness. Assume $G$ is not moral. Then, there exist non-adjacent $u$ and $w$ such that there is $v$ with $u \rightarrow v$ and $w \rightarrow v$. 
 
 #### Further Remarks
 
