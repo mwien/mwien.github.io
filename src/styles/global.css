@@ -146,25 +146,25 @@ hr {
 
 @media (max-width: 720px) {
 	body {
-		font-size: 14px;
+		font-size: 16px;
 	}
 	small {
-		font-size: 12px;
+		font-size: 14px;
 	}
 	h1 {
-		font-size: 2.7em;
+		font-size: 3em;
 	}
 	h2 {
-		font-size: 2.25em;
+		font-size: 2.4em;
 	}
 	h3 {
-		font-size: 1.725em;
+		font-size: 1.8em;
 	}
 	h4 {
-		font-size: 1.4em;
+		font-size: 1.45em;
 	}
 	h5 {
-		font-size: 1.15em;
+		font-size: 1.2em;
 	}
 	main {
 		padding: 1em;
