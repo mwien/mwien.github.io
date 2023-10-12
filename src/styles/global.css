@@ -160,8 +160,10 @@ dl {
 
 dt {
   grid-column-start: 1;
+  justify-self: end;
 }
 
 dd {
   grid-column-start: 2;
+  justify-self: start;
 }
