@@ -4,13 +4,15 @@ const today = new Date();
 
 <footer>
 	<div class="Impressum">
+		<small>
 		<dl>
-		<dt> E-Mail </dt> <dd> m.wienoebst (AT) uni-luebeck.de </dd>
+		<dt> E-Mail </dt> <dd> m.wienoebst (AT) uni-luebeck.de  </dd>
 		<dt> Phone </dt> <dd> +49 451 3101-5321 </dd>
-		<dt> Address </dt> <dd> University of Lübeck, Institute for Theoretical Computer Science </dd> <dd> Building 64, 2nd Floor, Room 17 </dd> <dd> Ratzeburger Allee 160, 23562 Lübeck </dd>
+		<dt> Address </dt> <dd> University of Lübeck, Theoretical Computer Science </dd> <dd> Building 64, 2nd Floor, Room 17 </dd> <dd> Ratzeburger Allee 160, 23562 Lübeck </dd>
+	<dt> &copy; </dt> <dd> {today.getFullYear()} Marcel Wienöbst. All rights reserved. </dd>
 		</dl>
+		</small>
 	</div>
-	&copy; {today.getFullYear()} Marcel Wienöbst. All rights reserved.
 </footer>
 <style>
 	footer {
@@ -32,4 +34,29 @@ const today = new Date();
 	.social-links a:hover {
 		color: rgb(var(--gray-dark));
 	}
+	dl {
+	  display: grid;
+	  grid-template-columns: max-content auto;
+	  justify-content: center;
+	}
+
+	dt {
+	  grid-column-start: 1;
+	  justify-self: end;
+	}
+
+	dd {
+	  grid-column-start: 2;
+	  justify-self: start;
+	  margin-left: 10px;
+	}
+	@media (max-width: 720px) {
+		footer {
+			padding: .5em .5em 2em .5em;
+		}
+		dd {
+			margin-left: 5px;
+		}
+	}
+
 </style>

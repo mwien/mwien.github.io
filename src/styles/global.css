@@ -126,9 +126,30 @@ hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
 }
+.sr-only {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+	clip: rect(1px 1px 1px 1px);
+	/* maybe deprecated but we need to support legacy browsers */
+	clip: rect(1px, 1px, 1px, 1px);
+	/* modern browsers, clip-path works inwards from each corner */
+	clip-path: inset(50%);
+	/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+	white-space: nowrap;
+}
+
 @media (max-width: 720px) {
 	body {
-		font-size: 12px;
+		font-size: 13px;
+	}
+	small {
+		font-size: 10px;
 	}
 	h1 {
 		font-size: 2.452em;
@@ -148,38 +169,5 @@ hr {
 	main {
 		padding: 1em;
 	}
-}
-
-.sr-only {
-	border: 0;
-	padding: 0;
-	margin: 0;
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
-	clip: rect(1px, 1px, 1px, 1px);
-	/* modern browsers, clip-path works inwards from each corner */
-	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
-	white-space: nowrap;
-}
-dl {
-  display: grid;
-  grid-template-columns: max-content auto;
-  justify-content: center;
-}
-
-dt {
-  grid-column-start: 1;
-  justify-self: end;
-}
-
-dd {
-  grid-column-start: 2;
-  justify-self: start;
 }
 
