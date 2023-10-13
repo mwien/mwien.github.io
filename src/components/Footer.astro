@@ -4,13 +4,55 @@ const today = new Date();
 
 <footer>
 	<div class="Impressum">
+		<small>
 		<dl>
-		<dt> E-Mail </dt> <dd> m.wienoebst (AT) uni-luebeck.de </dd>
-		<dt> Phone </dt> <dd> +49 451 3101-5321 </dd>
-		<dt> Address </dt> <dd> University of Lübeck, Institute for Theoretical Computer Science </dd> <dd> Building 64, 2nd Floor, Room 17 </dd> <dd> Ratzeburger Allee 160, 23562 Lübeck </dd>
+		<dt>
+			<div class="small-svg-container">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
+		</dt> <dd> <span style="white-space: nowrap;">m.wienoebst (AT) uni-luebeck.de</span>  </dd>
+		<dt>
+			<div class="small-svg-container">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div>
+		</dt> <dd> <span style="white-space: nowrap;"> +49 451 3101-5321 </span> </dd>
+		<dt> 
+			<div class="small-svg-container">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+		</dt> <dd> University of Lübeck, Theoretical Computer Science <br> Building 64, 2nd Floor, Room 17 <br> Ratzeburger Allee 160, 23562 Lübeck </dd>
+	<dt> &copy; </dt> <dd> {today.getFullYear()} Marcel Wienöbst. All rights reserved. </dd>
 		</dl>
+		</small>
 	</div>
-	&copy; {today.getFullYear()} Marcel Wienöbst. All rights reserved.
+	<div class="social-links">
+		<a href="https://sigmoid.social/@mwienoebst" target="_blank">
+			<span class="sr-only">Follow me on Mastodon</span>
+			<div class="svg-container">
+			<svg viewBox="0 0 16 16" aria-hidden="true"
+				><path
+					fill="currentColor"
+					d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"
+				></path></svg></div>
+		</a>
+		<a href="https://github.com/mwien" target="_blank">
+			<span class="sr-only">Go to my Github Profile</span>
+			<div class="svg-container">
+			<svg viewBox="0 0 16 16" aria-hidden="true"
+				><path
+					fill="currentColor"
+					d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+				></path></svg></div>
+		</a>
+		<a href="https://scholar.google.com/citations?user=MB2FWV4AAAAJ&hl=en" target="_blank">
+			<span class="sr-only">My publication list on Google Scholar</span>
+			<div class="svg-container">
+			<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24-12 9.5 4.838 3.94a8 8 0 0 1 7.162-4.44 8 8 0 0 1 7.162 4.44l4.838-3.94z"/></svg></div>
+		</a>
+		<a href="https://dblp.org/pid/266/4546.html" target="_blank">
+			<span class="sr-only">My publication list on dblp</span>
+			<div class="svg-container">
+			<svg fill = "currentColor" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M3.075.002c-.096.013-.154.092-.094.31L4.97 7.73 3.1 8.6s-.56.26-.4.85l2.45 9.159s.16.59.72.33l6.169-2.869 1.3-.61s.52-.24.42-.79l-.01-.06-1.13-4.22-.658-2.45-.672-2.49v-.04s-.16-.59-.84-1L3.5.141s-.265-.16-.425-.139zM18.324 5.03a.724.724 0 0 0-.193.06l-5.602 2.6.862 3.2 1.09 4.08.01.06c.05.47-.411.79-.411.79l-1.88.87.5 1.89.04.1c.07.17.28.6.81.91l6.95 4.269s.68.41.52-.17l-1.981-7.4 1.861-.86s.56-.26.4-.85L18.85 5.42s-.116-.452-.526-.39z"/></svg>
+			</div>
+		</a>
+	</div>
 </footer>
 <style>
 	footer {
@@ -32,4 +74,48 @@ const today = new Date();
 	.social-links a:hover {
 		color: rgb(var(--gray-dark));
 	}
+	dl {
+	  display: grid;
+	  grid-template-columns: max-content auto;
+	  justify-content: center;
+	}
+
+	dt {
+	  grid-column-start: 1;
+	  justify-self: end;
+	}
+
+	dd {
+	  grid-column-start: 2;
+	  justify-self: start;
+	  margin-left: 10px;
+	  text-align: start;
+	}
+	.svg-container {
+		width: 36px;
+		height: 36px;
+	}
+	.small-svg-container {
+		width: 18px;
+		height: 18px;
+		margin-top: 2px;
+	}
+	@media (max-width: 720px) {
+		footer {
+			padding: .8em .5em 2em .5em;
+		}
+		dd {
+			margin-left: 5px;
+		}
+		.svg-container {
+			width: 24px;
+			height: 24px;
+		}
+	.small-svg-container {
+		width: 11px;
+		height: 11px;
+		margin-top: 1.5px;
+	}
+	}
+
 </style>
