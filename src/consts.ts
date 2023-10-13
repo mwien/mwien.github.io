@@ -4,4 +4,4 @@
 export const SITE_GEN_TITLE = 'Marcel Wienöbst';
 export const SITE_BLOG_TITLE = 'Blog';
 export const SITE_ABOUT_TITLE = 'About';
-export const SITE_DESCRIPTION = 'Personal webpage and blog';
+export const SITE_DESCRIPTION = 'Personal webpage and blog of Marcel Wienöbst';
