@@ -1,0 +1,91 @@
+---
+title: 'On the Computational Complexity of Graph Moralization'
+description: 'By Marcel Wienöbst. This blog post discusses the complexity of computing the moral graph of a DAG. The main observation is that this problem is computationally equivalent to Boolean matrix multiplication, disproving previous complexity claims.'
+author: 'Marcel Wienöbst'
+pubDate: 'October 13 2023'
+heroImage: "/reduction.png"
+---
+
+TODO: get to the point faster
+
+#### Introduction
+Graph moralization is an important primitive in the field of
+probabilistic and causal graphical models. 
+It relates directed to
+undirected graphical models and has two main applications:
+- To perform inference in Bayesian networks, it is common to use moralization to obtain an undirected graph, which is then amenable to the toolbox of inference algorithm for this model class, e.g., the junction tree algorithm. This undirected graph has the property that it implies the largest possible subset of conditional independencies of the directed model.
+- Moralizing the subgraph of all ancestors of $X$, $Y$ and $S$ can be used for testing d-separation (i.e., implied conditional independence statements of a Bayesian network). If, and only if, $S$ is a vertex separator for $X$ and $Y$ in the moralized graph, it holds that $X$ and $Y$ are d-separated given $S$ in the original DAG. This fact has been used for finding (minimal) d-separating sets as it allows to use well-established algorithms for undirected graphs.  
+
+The time complexity of computing the moral graph has not been
+discussed in much depth, likely due to its apparent simplicity and because, e.g., when used
+in exact inference routines, which have exponential run-time on
+general graphs, it is usually not
+the bottleneck. However, in the context of testing and finding
+d-separators in directed acyclic graphs (DAGs), it *is* often the most expensive part of the
+algorithm as the remaining steps are simple to perform on undirected
+graphs and often take linear-time in the number of vertices and edges.
+
+In this setting the run-time is predominantly given as $O(n+m')$, or
+$O(n^2)$ as a looser bound in terms of only $n$, with
+$n$ being the number of vertices of the input (and output) graph and
+$m'$ the number of edges in the output graph. The first such reference is given in TODO and later repeated in TODO, which use moralization for finding minimal d-separetors, as well as TODO, which use it for computing back-door respectively front-door adjustment sets.
+However, this run-time analysis is incorrect and off by a factor of $n$.[^1]
+Below, we demonstrate that there is currently no $O(n^2)$ algorithm for moralization by connecting the graph moralization problem to a fundamental and
+deeply analyzed problem in computer science: (Boolean) matrix multiplication.
+We prove that the two problems are equivalent in the sense that an
+$O(n^2)$ algorithm for moralization would imply an
+algorithm of the same complexity for boolean matrix multiplication
+(and vice versa). As there is, despite significant effort,
+no known $O(n^2)$ algorithm for matrix multiplication (even though there is neither proof nor evidence that such an algorithm
+cannot exist), this demonstrates that an algorithmic breakthrough
+is necessary to reach this run-time for moralization.
+
+[^1]: The algorithms given in the stated papers usually have worst-case run-time $O(n^3)$, despite being claimed as $O(n^2)$, hence the missing factor $n$. However, being more precise, because moralization is computationally equivalent to Boolean matrix multiplication, as we show in this blog post, the time-complexity of moralization can be stated, at least theoretically, as $O(n^{2.37286})$ TODO:ref which is off from $n^2$ by a factor of merely $n^{0.37286}$. 
+
+It should be noted that there are works which correctly analzye the moralization time-complexity. TODO TODO TODO
+In the latter work, it is shown that graph moralization can be solved by Boolean matrix multiplication. In this work, we focus on the reverse direction.
+Moreover, for the majority of the tasks mentioned above, such as finding minimal d-separators as well as back-door and front-door adjustment sets, the state-of-the-art algorithms TODO TODO TODO do not rely on moralization and are hence not affected.
+
+### Graph Moralization and Boolean Matrix Multiplication
+We consider the following two problems. First, the moral graph of a DAG $G$ is defined as follows:
+
+TODO
+
+The following is an example TODO...
+
+![Basic examples of moral and transitive graphs.](../../assets/transitivity_example.png)
+
+Second, the boolean matrix product is defined as:
+
+TODO
+
+See the following example: 
+
+TODO
+
+
+### Solving Graph Moralization by Boolean Matrix Multiplication
+
+TODO state that graph moralization can be solved by Boolean matrix multiplication. More formally:
+
+TODO
+
+TODO: give short proof and illustration
+
+### Computational Equivalence of Graph Moralization and Boolean Matrix Multiplication
+
+To show computational equivalence it hence remains to prove that Boolean matrix multiplication can be solved by graph moralization:
+
+TODO
+
+TODO: proof and illustration
+
+### Related Problems
+
+The techniques used here can be generalized to related problems. 
+- The problem of moralizing *ancestral graphs* (TODO: ref), also known as the augmented graph (TODO: ref) is also equivalent to BMM as can be shown by generalizing Theorem~TODO.
+- The problem of computing the latent projection of a DAG with unobserved variables is again BMM-hard, which can be shown by reduction to and from the problem of computing the transitive closure of a DAG (which is well-known to be equivalent to BMM). The reductions are straightforward and a nice exercise.
+
+Note that the problem of detecting whether a graph is *moral* (that is the moralization procedure adds no edges) is possible in linear-time $O(n+m)$ as discussed in this previous blog post. 
+
+*Footnotes:*
