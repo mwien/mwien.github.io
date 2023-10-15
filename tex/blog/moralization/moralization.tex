@@ -1,0 +1,31 @@
+\documentclass[tikz,convert={density=300,outext=.png}]{standalone}
+\usetikzlibrary{arrows.meta,graphs}
+\begin{document}
+\begin{tikzpicture}
+    \node (a) at (0,0) {$a$};
+    \node (b) at (2,0) {$b$};
+    \node (c) at (0,-2) {$c$};
+    \node (d) at (2,-2) {$d$};
+    \node (e) at (4,-2) {$e$};
+    \node (l) at (2,-3) {DAG};
+  \graph[use existing nodes] {
+    a -> b;
+    c -> b;
+    a -> d -> e;
+    b -> e;
+    c -> d;
+  };
+    \node (a) at (6,0) {$a$};
+    \node (b) at (8,0) {$b$};
+    \node (c) at (6,-2) {$c$};
+    \node (d) at (8,-2) {$d$};
+    \node (e) at (10,-2) {$e$};
+    \node (l) at (8,-3) {Moralized graph};
+  \graph[use existing nodes] {
+    a -- c -- b --a;
+		c -- d -- e -- b -- d;
+		a -- d;
+  };
+\end{tikzpicture}
+\end{document}
+

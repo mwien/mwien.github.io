@@ -75,7 +75,7 @@ In contrast, checking whether a graph is moral is possible in linear-time. The a
 
 [^3]: We will not go into more details here, but essentially, for a DAG $G$, the undirected graph obtained by ignoring edge directions of $G$ has zero fill-in with regard to any topological ordering of $G$ if, and only if, $G$ does not contain $ a \rightarrow b \leftarrow c$ as induced subgraph. Hence, any algorithm for testing zero fill-in directly translates to one for checking morality. 
 
-**Lemma** ([Rose, Tarjan, Lueker [1976]](https://epubs.siam.org/doi/10.1137/0205021); [Tarjan, Yannakakis [1984]](https://epubs.siam.org/doi/abs/10.1137/0213035); Whitten [1978] (unpublished))  
+**Lemma** [[Rose, Tarjan, Lueker (1976)](https://epubs.siam.org/doi/10.1137/0205021); [Tarjan, Yannakakis (1984)](https://epubs.siam.org/doi/abs/10.1137/0213035); Whitten (1978, unpublished)]  
 Let $G$ be a DAG. Testing whether $G$ is moral can be done in linear time in the size of $G$ (that is $O(n+m)$, when $G$ has $n$ vertices and $m$ edges).
 
 *Proof.*   
@@ -106,4 +106,17 @@ It would be interesting to further formalize this argument, e.g., for larger gra
 Another question is what happens when dropping the acyclicity requirement?
 The linear-time algorithm for checking morality explicitly uses the topological ordering of the vertices and thus cannot be used anymore. If the graph is cyclic (let's say there is still only one edge between any pair of vertices, such graphs are known as *oriented graphs*), it is unclear whether it is possible to solve the problem in linear-time. I tend to think it has similar hardness to triangle-detection, but it is not directly clear how to prove this by reduction. I would be very interested if you have any ideas how to tackle this question :)
 
-*Footnotes:*
+#### Citation
+
+You can cite this blog post as:
+```bibtex
+@article{wienoebst2023moralization,
+  title = {Three-Vertex Induced Subgraph Isomorphism in DAGs},
+  author = {Wien{\"o}bst, Marcel},
+  journal = {Blog post at mwien.github.io},
+  year = {2023},
+  howpublished = {\url{mwien.github.io/blog/subgraph-isomorphism-dags/}}
+}
+```
+
+#### Footnotes
