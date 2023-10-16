@@ -40,7 +40,7 @@ We show two directions. If $G$ contains an induced subgraph $a - b - c$, then it
 
 It immediately follows that, to detect whether a graph contains an induced subgraph $a - b - c$, it suffices to find the connected components of $G$ and check whether each of them is a clique (this can be done by counting edges). 
 
-Indeed, this observation completes the picture for three-vertex undirected graphs $H$ as the remaining graphs are analogues of the discussed cases obtainable by changing edges into non-edges and vice versa (complement graphs). Interestingly, similar (more nuanced) effects also appear on four vertices as discussed in detail in [this paper](https://epubs.siam.org/doi/abs/10.1137/1.9781611973730.111) by Virginia Vassilevska Williams, Joshua R. Wang, Ryan Williams, and Huacheng Yu, which studies all possible cases in this setting. 
+Indeed, this observation completes the picture for three-vertex undirected graphs $H$ as the remaining graphs are analogues of the discussed cases obtainable by changing edges into non-edges and vice versa (complement graphs). Interestingly, similar (more nuanced) effects also appear on four vertices as discussed in detail by [Williams, Wang, Williams, Yu (2015)](https://epubs.siam.org/doi/abs/10.1137/1.9781611973730.111), which studies all possible cases in this setting. 
 
 We will now get back to DAGs. The two induced subgraphs $H_{\text{trans}}$ and $H_{\text{moral}}$, on the surface, both look similar to the case $H_{\text{path}} = a - b - c$ for undirected graphs, which would be obtained when ignoring edge directions. The following shows that directions matter.
 
@@ -118,5 +118,11 @@ You can cite this blog post as:
   howpublished = {\url{mwien.github.io/blog/subgraph-isomorphism-dags/}}
 }
 ```
+
+#### References
+Rose, D. J.; Tarjan, R. E.; and Lueker, G. S. 1976. *Algorithmic Aspects of Vertex Elimination on Graphs.* In SIAM Journal on Computing 5(2).     
+Tarjan, R.E.; and Yannakakis, M. 1984. *Simple linear-time algorithms to test chordality of graphs, test acyclicity of hypergraphs, and selectively reduce acyclic hypergraphs.* In SIAM Journal on computing, 13(3).     
+Whitten, G.. 1978. Presentation at the SIAM Symposium on Sparse Matrix Computations.    
+Williams, V. V.; Wang, J. R.; Williams, R.; and Yu, H. 2015. *Finding Four-Node Subgraphs in Triangle Time.* In Proceedings of the 2015 Annual ACM-SIAM Symposium on Discrete Algorithms (SODA).    
 
 #### Footnotes

@@ -57,7 +57,7 @@ algorithm as the remaining steps are simple to perform on undirected
 graphs and often take linear time in the number of vertices and edges.
 
 In the corresponding literature, the time complexity of moralization is predominantly stated as $O(n+m')$, with $m'$ being the number of edges in the output graph, or
-as $O(n^2)$ in terms of only $n$. The first such reference is given in [Geiger, Verma, Pearl (1990)](https://arxiv.org/abs/1304.1505) and later repeated in [Tian, Paz, Pearl (1998)](https://ftp.cs.ucla.edu/pub/stat_ser/r254), [Javidian, Valtorta (2018a)](https://www.researchgate.net/publication/326998693_Finding_Minimal_Separators_in_Ancestral_Graphs), [Javidian, Valtorta (2018b)](http://proceedings.mlr.press/v72/javidian18a.html) and [Javidian, Valtorta, Jamshidi (2020)](https://arxiv.org/abs/2002.10870), which use moralization for finding minimal d-separators, as well as [Textor, Liskiewicz (2011)](https://arxiv.org/abs/1202.3764), [van der Zander, Liskiewicz, Textor (2014)](https://dl.acm.org/doi/10.5555/3020325.3020328), [van der Zander, Liskiewicz, Textor (2019)](https://www.sciencedirect.com/science/article/pii/S0004370219300025) and [Jeong, Tian, Bareinboim (2022)](https://arxiv.org/abs/2210.05816), which use it in the context of computing back-door respectively front-door adjustment sets. 
+as $O(n^2)$ in terms of only $n$. The first such reference is given in [Geiger, Verma, Pearl (1990)](https://arxiv.org/abs/1304.1505) and later repeated in [Tian, Paz, Pearl (1998)](https://ftp.cs.ucla.edu/pub/stat_ser/r254), [Javidian, Valtorta (2018a)](https://www.researchgate.net/publication/326998693_Finding_Minimal_Separators_in_Ancestral_Graphs), [Javidian, Valtorta (2018b)](http://proceedings.mlr.press/v72/javidian18a.html) and [Javidian, Valtorta, Jamshidi (2020)](https://arxiv.org/abs/2002.10870), which use moralization for finding minimal d-separators, as well as [Textor, Liskiewicz (2011)](https://arxiv.org/abs/1202.3764), [van der Zander, Liskiewicz, Textor (2014)](http://auai.org/uai2014/proceedings/individuals/209.pdf), [van der Zander, Liskiewicz, Textor (2019)](https://www.sciencedirect.com/science/article/pii/S0004370219300025) and [Jeong, Tian, Bareinboim (2022)](https://arxiv.org/abs/2210.05816), which use it in the context of computing back-door respectively front-door adjustment sets. 
 However, this run-time analysis is incorrect and off by a factor of $n$.[^1]
 
 [^1]: A naive implementation of moralization has worst-case run-time $O(n^3)$, despite being claimed as $O(n^2)$ in these works, hence the missing factor $n$. Being more precise, because moralization is computationally equivalent to BMM, the time-complexity of moralization can be stated, at least theoretically, as $O(n^{2.37286})$, the current run-time of fast matrix multiplication, which is off from $n^2$ by a factor of merely $n^{0.37286}$. 
@@ -150,5 +150,24 @@ You can cite this blog post as:
   howpublished = {\url{mwien.github.io/blog/complexity-moralization/}}
 }
 ```
+
+#### References
+An, X.; and Cercone, N. 2009. *Compiling Multiply Sectioned Bayesian Networks: A Comparative Study.* In Proceedings of the Eighth Mexican International Conference on Artificial Intelligence.     
+Geiger, D.; Verma, T.; and Pearl, J. 1990. *d-separation: From theorems to algorithms.* In Machine Intelligence and Pattern Recognition (10).   
+Heisterkamp, S. H. 2009. *Directed acyclic graphs and the use of linear mixed models.* Technical Report.   
+Javidian, M. A.; and Valtorta, M. 2018. *Finding minimal separators in ancestral graphs.* In Proceedings of the Seventh Causal Inference Workshop at the 34th Conference on Artifical Intelligence (UAI'18).    
+Javidian, M. A.; and Valtorta, M. 2018. *Finding Minimal Separators in LWF Chain Graphs.* In Proceedings of the Ninth International Conference on Probabilistic Graphical Models.   
+Javidian, M. A.; Valtorta, M.; and Jamshidi, P. 2020. *AMP Chain Graphs: Minimal Separators and Structure Learning Algorithms*.  Journal of Artificial Intelligence Research 69.    
+Pearl, J.; and Verma, T. S. 1995. *A theory of inferred causation.* In Studies in Logic and the Foundations of Mathematics (134).     
+Richardson, T.; and Spirtes, P. 2002. *Ancestral graph Markov models.* The Annals of Statistics (30(4)).    
+Textor, J.; and Liśkiewicz, M. 2011. *Adjustment criteria in causal diagrams: an algorithmic perspective.* In Proceedings of the Twenty-Seventh Conference on Uncertainty in Artificial Intelligence (UAI'11).    
+Tian, J.; Paz. A.; and Pearl, J. 1998. *Finding Minimal D-separators.* Technical Report.     
+van der Zander, B.; Textor, J.; and Liśkiewicz, M. 2014. *Constructing Separators and Adjustment Sets in Ancestral Graphs.* In Proceedings of the Thirtieth Conference on Uncertainty in Artificial Intelligence (UAI'14).    
+van der Zander, B., Liśkiewicz, M., and Textor, J. 2019. *Separators and adjustment sets in causal graphs: Complete criteria and an algorithmic framework.* Artificial Intelligence (270).     
+van der Zander, B.; and Liśkiewicz, M. 2020. *Finding minimal d-separators in linear time and applications.* In Proceedings of the Thirty-Sixth Conference on Uncertainty in Artificial Intelligence (UAI'20).    
+Jeong, H.; Tian, J.; and Bareinboim, E. 2022. *Finding and listing front-door adjustment sets.* In Proceedings of the Thirty-Fifth Conference on Advances in Neural Information Processing Systems (NeurIPS'22).      
+Wienöbst, M.; van der Zander, B.; and Liśkiewicz, M. 2022. *Linear-Time Algorithms for Front-Door Adjustment in Causal Graphs.* Preprint.    
+Xia, Y.; Prasanna, V. K. 2007. *Parallel Exact Inference.* In Advances in Parallel Computing (15).    
+Xiang, Y. 2002. *Probabilistic Reasoning in Multiagent Systems: A graphical models approach.* Cambridge University Press.
 
 #### Footnotes
