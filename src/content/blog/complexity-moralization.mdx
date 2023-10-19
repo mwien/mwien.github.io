@@ -44,7 +44,7 @@ $$
 
 #### Related Work
 Moralization transforms a directed to an undirected graphical model and has two main applications:
-- To perform inference in Bayesian networks, it is common to use moralization to obtain an undirected graph, which is then amenable to the toolbox of inference algorithm for this model class, e.g., the junction tree algorithm. This undirected graph has the property that it encodes the largest possible subset of conditional independencies of the directed model.
+- To perform inference in Bayesian networks, it is common to use moralization to obtain an undirected graph, which is then amenable to the toolbox of inference algorithm for this model class, e.g., the [junction tree algorithm](https://en.wikipedia.org/wiki/Junction_tree_algorithm). This undirected graph has the property that it encodes the largest possible subset of conditional independencies of the directed model.
 - Moralizing a certain subgraph of a DAG allows for testing d-separation (i.e., implied conditional independence statements of a Bayesian network) through the conceptually simpler (vertex) separation in undirected graphs. This fact has been used for finding (minimal and minimum) d-separating sets as it allows to use well-studied algorithms available for undirected graphs.  
 
 The time complexity of computing the moralized graph has not been
