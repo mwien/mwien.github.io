@@ -8,7 +8,7 @@ heroImage: "/bmmwithmoralize.png"
 
 
 #### Introduction
-This blog post is about the computational complexity of [graph moralization](https://en.wikipedia.org/wiki/Moral_graph). The main point is to show that this problem is computationally equivalent to Boolean matrix multiplication (BMM). This refutes previous claims that moralization of directed acyclic graphs (DAGs) can be performed in time $O(n^2)$, with $n$ being the number of vertices, as this would necessitate a major algorithmic breakthrough. The only truly subcubic algorithms known for BMM are based on fast matrix multiplication, which is still firmly away from quadratic time. 
+This blog post discusses the computational complexity of [graph moralization](https://en.wikipedia.org/wiki/Moral_graph). The main point is to show that this problem is computationally equivalent to Boolean matrix multiplication (BMM). This refutes previous claims that moralization of directed acyclic graphs (DAGs) can be performed in time $O(n^2)$, with $n$ being the number of vertices, as this would necessitate a major algorithmic breakthrough. The only truly subcubic algorithms known for BMM are based on fast matrix multiplication, which is still firmly away from quadratic time. 
 
 Graph moralization is an important primitive in the field of probabilistic and causal graphical models. Given a DAG, it adds an edge between non-adjacent vertices $x$ and $y$ if they have a common child $z$ and afterwards makes all edges undirected. 
 
