@@ -8,7 +8,7 @@ heroImage: "/bmmwithmoralize.png"
 
 
 #### Introduction
-This blog post is about the computational complexity of [graph moralization](https://en.wikipedia.org/wiki/Moral_graph). The main point is to show that this problem is computationally equivalent to Boolean matrix multiplication (BMM). This refutes previous claims that moralization of directed acyclic graphs (DAGs) can be performed in time $O(n^2)$, with $n$ being the number of vertices, as this would necessitate a major algorithmic breakthrough. The only truly subcubic algorithms known for BMM are based on fast matrix multiplication, which is still firmly away from quadratic time. 
+This blog post discusses the computational complexity of [graph moralization](https://en.wikipedia.org/wiki/Moral_graph). The main point is to show that this problem is computationally equivalent to Boolean matrix multiplication (BMM). This refutes previous claims that moralization of directed acyclic graphs (DAGs) can be performed in time $O(n^2)$, with $n$ being the number of vertices, as this would necessitate a major algorithmic breakthrough. The only truly subcubic algorithms known for BMM are based on fast matrix multiplication, which is still firmly away from quadratic time. 
 
 Graph moralization is an important primitive in the field of probabilistic and causal graphical models. Given a DAG, it adds an edge between non-adjacent vertices $x$ and $y$ if they have a common child $z$ and afterwards makes all edges undirected. 
 
@@ -44,7 +44,7 @@ $$
 
 #### Related Work
 Moralization transforms a directed to an undirected graphical model and has two main applications:
-- To perform inference in Bayesian networks, it is common to use moralization to obtain an undirected graph, which is then amenable to the toolbox of inference algorithm for this model class, e.g., the junction tree algorithm. This undirected graph has the property that it encodes the largest possible subset of conditional independencies of the directed model.
+- To perform inference in Bayesian networks, it is common to use moralization to obtain an undirected graph, which is then amenable to the toolbox of inference algorithm for this model class, e.g., the [junction tree algorithm](https://en.wikipedia.org/wiki/Junction_tree_algorithm). This undirected graph has the property that it encodes the largest possible subset of conditional independencies of the directed model.
 - Moralizing a certain subgraph of a DAG allows for testing d-separation (i.e., implied conditional independence statements of a Bayesian network) through the conceptually simpler (vertex) separation in undirected graphs. This fact has been used for finding (minimal and minimum) d-separating sets as it allows to use well-studied algorithms available for undirected graphs.  
 
 The time complexity of computing the moralized graph has not been
@@ -170,7 +170,7 @@ van der Zander, B., Liśkiewicz, M., and Textor, J. 2019. *Separators and adjust
 van der Zander, B.; and Liśkiewicz, M. 2020. *Finding minimal d-separators in linear time and applications.* In Proceedings of the Thirty-Sixth Conference on Uncertainty in Artificial Intelligence (UAI'20).    
 Jeong, H.; Tian, J.; and Bareinboim, E. 2022. *Finding and listing front-door adjustment sets.* In Proceedings of the Thirty-Fifth Conference on Advances in Neural Information Processing Systems (NeurIPS'22).      
 Wienöbst, M.; van der Zander, B.; and Liśkiewicz, M. 2022. *Linear-Time Algorithms for Front-Door Adjustment in Causal Graphs.* Preprint.    
-Xia, Y.; Prasanna, V. K. 2007. *Parallel Exact Inference.* In Advances in Parallel Computing (15).    
+Xia, Y.; and Prasanna, V. K. 2007. *Parallel Exact Inference.* In Advances in Parallel Computing (15).    
 Xiang, Y. 2002. *Probabilistic Reasoning in Multiagent Systems: A graphical models approach.* Cambridge University Press.
 
 #### Footnotes
