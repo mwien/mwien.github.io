@@ -10,16 +10,16 @@ heroImage: "/bmmwithmoralize.png"
 #### Introduction
 Causal discovery describes the task of learning a graphical representation of the causal relationships between random variables from observational data. As is not too hard to imagine, this is a fairly hard task and generally only possible to a certain extent. Still, many algorithms have been proposed, analyzed and compared. 
 
-Hence, there are already a lot of good benchmarks, however, most of them are fairly broad and general (TODO: citations). In comparison, this post is opinionated and narrow as only a few algorithms are compared and the focus lies on evaluating sample-efficiency or, more precicely, how many observations are needed such that the "correct" causal structure is found with high probability. 
+There are already a lot of good benchmarks, however, most of them are fairly broad and general (TODO: citations). In comparison, this post is opinionated and narrow as only a few algorithms are compared and the focus lies on evaluating sample-efficiency or, more precicely, how many observations are needed such that the "correct" causal structure is found with high probability. 
 
 The latter is indeed a valid question, because at least asymptotically (given that all assumptions hold) classical algorithm like PC and GES are consistent and will obtain this correct structure. (FOOTNOTE markov equivalence) The practical feasibility, however, depends on how many samples are actually necessary to achieve this. 
 
-As baseline, I evaluate an *exact* score-based algorithm that outputs the optimal structure according to the BIC (model selection criterion based on penalized log-likelihood). For the purposes of this blog, which focuses on search methods and not on model selection criteria, this marks the best achievable efficiency. The algorithm needs exponential time, however, it can be scaled to settings with up to 30 variables. FOOTNOTE: arguably this already includes many practical cases; I do not know why these algorithms are used so infrequently...
+As baseline, I evaluate an *exact* score-based algorithm that outputs the optimal structure according to the BIC (a model selection criterion based on penalized log-likelihood). For the purposes of this blog, which focuses on search methods and not on model selection criteria, this marks the best achievable sample-efficiency. This algorithm needs exponential time, however, it can be scaled to settings with up to 20-30 variables. FOOTNOTE: arguably this already includes many practical cases; I do not know why these algorithms are used so infrequently...
 
-I also consider one further score-based method without formal consistency guarantees, more on that later.
+I also consider one further score-based method without formal consistency guarantees, but more on that later.
 
 #### Setting
-For the benchmarks, I rely on the most common setting in the literature – sampling synthetic data from a randomly generated linear causal model. There are many weaknesses to such a simple approach, however, in my opinion (i) the main conclusions in this post are clear enough to warrant some confidence and (ii) it is reasonable to assume that any inefficient method in this setting will likely not perform too well in more complex situations (non-linear relationships, unobserved confounders, cycles) either unless it is specifically targeted to these cases (which the methods compared here are not). 
+For the benchmarks, I rely on the most common setting in the literature – sampling synthetic data from a randomly generated linear causal model. There are many weaknesses to such a simple approach, but addressing those goes beyond the scope of this blog. 
 
 As mentioned above, I evaluate the following methods:
 - PC algorithm
@@ -27,16 +27,35 @@ As mentioned above, I evaluate the following methods:
 - Exact score based algorithm
 - Heuristic score based algorithm 
 
-Here PC is the only constraint-based method. GES has finds the best fitting model asympotically, while the exact algorithm does so for finite samples as well and the heuristic algorithm has no guarantees whatsoever. (FOOTNOTE unless you let it run exponentially long).
+Here PC is the only constraint-based method. GES has finds the best fitting model asympotically, while the exact algorithm does so for finite samples as well and the heuristic algorithm has no guarantees whatsoever.
 
 Each algorithm is evaluated on the same synthetic data. xyz causal models with 22 variables (FOOTNOTE: highest number which can be comfortably evaluated on a standard laptop for the exact method) are generated and for each $s$ samples are drawn for $s \in \{50, \dots\}$. The structural hamming distance (SHD) between the computed and true CDPAG is reported (there are many other, and potentially better, metrics, however, here we only really consider how fast the SHD approaches zero with increasing number of observation and not try to interpret how a SHD of 50 compares to a SHD of 45). 
 
 A complete and detailed description of the setting is given at the end of this blog post. Moreover, the source code is available here: TODO. 
 
 #### Results
+Let's start with the comparison of PC, GES and the exact score-based method. 
+
+TODO: insert pic
+
+While for the sparser graphs, there is some convergence for PC and GES, it is barely noticable on the larger graphs. And even in the sparse case, hundreds of thousands of observations are necessary. In contrast, the exact algorithm needs much much fewer observations to recover (the x-axis is logarithmic) the true causal structure. 
+
+One interpretation of this result is that *algorithmically* PC and GES are quite far from the optimal achievable performance on finite samples. The exact score-based algorithm on the other hand is only feasible for 20-30 variables. Is it possible to get similar performance with less compute?
+
+As an example, I implemented an extremely simple simulated annealing scheme. It starts with the empty graph and in each step proposes one of three moves: inserting an edge $a \rightarrow b$ (provided it does not introduce a cycle), removing an edge $a \rightarrow b$ or reversing an edge (again if it does not introduce a cycle). These moves are accepted using the standard simulated annealing probabilities, see e.g. wikipedia. 
+
+This gives the following results:
+
+TODO: insert pic
+
+This performance is not unique to this method as e.g. the benchpress results show (TODO: link). Here, MCMC/annealing schemes as well as other greedy score-based methods perform extremely well and achieve near optimal performance. Two recent algorithms which give near optimal performance in the linear gaussian setting are GraSP and BOSS (TODO: links) and their experimental sections indicate similar results as well. 
+
+Other constraint-based methods as well as continuous optimization ones have shown comparably worse results. However it seems reasonable that here as well more compute compared to the classical (and fast) algorithms such as PC may yield better results. 
 
 #### Conclusions
-TODO
+The benchmark results show that the classical methods PC and GES leave a rather large algorithmical performance gap (at least using the setup that I used here). However, this gap can be filled by algorithms leveraging computation, which include the exponential-time exact score-based algorithm, but also other score-based methods, which give quite convincing results. 
+
+This suggests that when it comes to causal structure learning of DAGs, there are fairly good algorithmic methods available. For practical use, however, unobserved confounders, cycles, more complex non-linear relationships and unstructured non-tabular data may pose large obstacles. While there is much research addressing those problems, TODO
 
 #### Citation
 
