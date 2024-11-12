@@ -1,18 +1,39 @@
 ---
-title: 'Is Causal Discovery NP-hard?'
-description: 'By Marcel Wienöbst. This blog post revisits the question whether causal discovery is a NP-hard problem and presents arguments for and against this claim.'
+title: 'Is Causal Discovery NP-Hard and Does It Matter?'
+description: 'By Marcel Wienöbst. This blog post revisits the question whether causal discovery is a NP-hard problem. Not so surprisingly, this depends on how you define the problem. Further, I argue that NP-hardness claims are not relevant to the setting studied in the literature.'
 author: 'Marcel Wienöbst'
 pubDate: 'July 12 2024'
 heroImage: "/reduction.png"
 ---
 
-#### Introduction/Motivation
+#### Motivation
+The term causal discovery usually refers to the problem of recovering a causal structure -- represented as a graph -- from observational data (footnote: no interventions). The most common setting is as follows: given $n$ observations over variables $X_1, \dots, X_p$ the goal is to find a DAG (directed acyclic graph), which models the data generating process in the sense that $X_i \rightarrow X_j$ implies that $X_i$ is a direct cause of $X_j$ (we make this more precise below). 
 
-TODO: present recent claims from papers and intrigue reader by comparison with Claassen, Mooij
+TODO TODO TODO
 
-#### Arguments for NP-hardness
+There are different approaches to recovering the underlying DAG, with the two main ones being
+- constraint-based, where conditional independence tests are used to make inferences about the DAG
+- score-based, where a score/loss over DAGs is optimized.
 
-#### Arguments against NP-hardness
+The constraint-based approaches utilize the fact that the true model implies certain conditional independencies in the data, which can be used to remove and orient edges. 
+
+The score-based approaches are different at first glance. However, as they usually optimize a penalized likelihood score such as BIC,
+$$ TODO $$, they will yield in the sample limit the DAG with the smallest number of parameters, which can fit the data/represent the probability distribution of the underlying causal process. This means that conditional independencies are exploited as well. 
+
+Recently, the community has shifted from using discrete search over DAGs to continuous search over adjacency matrices of DAGs (TODO: references). One motivation of this was that discrete search over DAGs is supposedly "infeasible", with common explanations for this being
+- the search space of DAGs is super-exponentially large and
+- the problem of finding the best DAG is combinatorially hard (NP-hard) due to the acyclicity constraint.
+
+Footnote: It is not immediately clear why continuous search methods should address these two issues as this makes the search space infinitely large and neither removes the acyclicity constraint nor NP-hardness -- any continuous space method solving the problem in polynomial-time would still imply that P equals NP. One can still make the argument that in practical cases continuous methods might be better for some reason, but then again discrete heuristic search gives excellent results on many problems as well -- despite NP-hardness. 
+
+For the NP-hardness claim, results from Chickering are cited, which show that the problem of finding the best scoring DAG is NP-hard (even if that DAG is sparse). However, there are also follow-up works such as from Claassen, Mooij (2013) with the intriguing title "Learning Sparse Causal Models is not NP-hard". In this blog post, I will discuss and compare those claims with a specific focus on the actual (expected) computational hardness of score-based causal discovery. 
+
+#### NP-hardness of learning minimal Bayesian networks
+Chickering discussed the hardness of finding the best-scoring DAG in several papers -- we focus on the ones from 1996 and 2003 (there are also other papers with intriguing results, see e.g. Meek). TODO
+
+#### Complexity of causal discovery
+- in the sample limit 
+- average case complexity
 
 #### Conclusion
 
@@ -21,7 +42,7 @@ TODO: present recent claims from papers and intrigue reader by comparison with C
 You can cite this blog post as:
 ```bibtex
 @article{wienoebst2024hardnesscausal,
-  title = {Is Causal Discovery NP-hard?},
+  title = {Is Causal Discovery NP-Hard and Does It Matter?},
   author = {Wien{\"o}bst, Marcel},
   journal = {Blog post at mwien.github.io},
   year = {2024},
